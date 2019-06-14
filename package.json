@@ -1,7 +1,7 @@
 {
   "name": "fastn-virtual-component",
   "version": "1.0.0",
-  "description": "",
+  "description": "fastn components for rendering dom-lite nodes",
   "main": "index.js",
   "scripts": {
     "test": "node test"
@@ -14,5 +14,17 @@
   },
   "dependencies": {
     "dom-lite": "^0.5.1"
-  }
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KoryNunn/fastn-virtual-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KoryNunn/fastn-virtual-component/issues"
+  },
+  "homepage": "https://github.com/KoryNunn/fastn-virtual-component#readme"
 }
