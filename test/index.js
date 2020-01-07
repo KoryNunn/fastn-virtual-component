@@ -116,3 +116,32 @@ test('render complex UI', function(t){
 
 	}, 100);
 });
+
+test('render input with data binding', function(t){
+	t.plan(1);
+
+	var fastn = initFastn({
+		_generic: virtualGenericComponent,
+		text: virtualTextComponent,
+		list: require('fastn/listComponent'),
+		templater: require('fastn/templaterComponent')
+	});
+
+	var data = {};
+
+	var inputComponent = fastn('input', {
+		value: fastn.binding('data'),
+		oninput: 'value:value'
+	});
+
+	inputComponent.attach(data);
+
+	setTimeout(function(){
+		fastn.Model.set(data, 'data', 'foo');
+
+		inputComponent.render();
+
+		t.equal(inputComponent.element.outerHTML, '<input value="foo" oninput="value:value">');
+
+	}, 100);
+});

@@ -9,7 +9,10 @@ module.exports = function(fastn, component, type, settings, children){
 	    if(tagName && tagName.constructor === virtualNode.constructor){
 	        return tagName;
 	    }
-	    return virtualDocument.createElement(tagName);
+	    var element = virtualDocument.createElement(tagName);
+        element.addEventListener = () => {};
+        element.removeEventListener = () => {};
+        return element;
 	}
 
     return component;
